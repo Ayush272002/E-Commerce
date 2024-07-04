@@ -195,7 +195,7 @@ const Navigation = () => {
                 className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
               >
                 <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
-                <span className="hidden nav-item-name mt-[3rem]">Login</span>
+                <span className="hidden nav-item-name mt-[4px]">Login</span>
               </Link>
             </li>
 
@@ -205,7 +205,7 @@ const Navigation = () => {
                 className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
               >
                 <AiOutlineUserAdd className="mr-2 mt-[4px]" size={26} />
-                <span className="hidden nav-item-name mt-[3rem]">Register</span>
+                <span className="hidden nav-item-name mt-[4px]">Register</span>
               </Link>
             </li>
           </ul>
