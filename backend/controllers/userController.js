@@ -12,7 +12,10 @@ const createUser = asyncHandler(async (req, res) => {
 
   // check if user exists
   const userExists = await User.findOne({ email });
-  if (userExists) res.status(400).send("User alredy exists");
+  if (userExists) {
+    res.status(400).json({ message: "User already exists" });
+    return;
+  }
 
   // create user
   const salt = await bcrypt.genSalt(10);
