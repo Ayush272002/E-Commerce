@@ -64,6 +64,9 @@ const loginUser = asyncHandler(async (req, res) => {
       });
 
       return; //exit the function after sending the response
+    } else {
+      res.status(400).json({ message: "Invalid Password" });
+      return;
     }
   }
 });
