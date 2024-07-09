@@ -172,6 +172,26 @@ const addProductReview = asyncHandler(async (req, res) => {
   }
 });
 
+const fetchTopProducts = asyncHandler(async (req, res) => {
+  try {
+    const products = await Product.find({}).sort({ rating: -1 }).limit(4);
+    res.json(products);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ message: "Server error" });
+  }
+});
+
+const fetchNewProducts = asyncHandler(async (req, res) => {
+  try {
+    const products = await Product.find().sort({ _id: -1 }).limit(5);
+    res.json(products);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ message: "Server error" });
+  }
+});
+
 export {
   addProduct,
   updateProductDetails,
@@ -180,4 +200,6 @@ export {
   getProductById,
   fetchAllProducts,
   addProductReview,
+  fetchTopProducts,
+  fetchNewProducts,
 };
